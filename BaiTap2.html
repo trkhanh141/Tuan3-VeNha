@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài tập 2 - Tạo các đoạn văn bằng CSS</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ===== a. Đại học UEH: chữ xanh, canh giữa, in đậm, gạch chân, 30px ===== */
+    #a {
+      color: blue;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 30px;
+    }
+
+    /* ===== b. Khoa CNTT: chữ đỏ, canh phải, in nghiêng, viền chấm vàng bo góc,
+              nền xám, 15px, chữ mờ 50% ===== */
+    #b {
+      color: rgba(255, 0, 0, 0.5);
+      text-align: right;
+      font-style: italic;
+      font-size: 15px;
+      background-color: gray;
+      border: 3px dotted yellow;
+      border-radius: 12px;
+      padding: 8px 12px;
+    }
+
+    /* ===== c. Chữ BIT-UEH giống hình mẫu (chữ xanh, quầng sáng đỏ, có nền xanh nhạt) ===== */
+    #c {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 30px 50px;
+      font-size: 48px;
+      font-weight: bold;
+      color: #9acd32;
+      background-color: #d8e8b8;                   /* nền xanh nhạt */
+      background-image: radial-gradient(ellipse at center, #eef4dc 0%, #d3e3a9 100%);
+      text-shadow: 0 0 6px red,
+                   0 0 12px red;
+    }
+
+    /* ===== d. Logo BIT kích cỡ 30px làm hình nền, lặp lại và cố định ===== */
+    #d {
+      background-image: url("https://ueh.edu.vn/schools/college/images/logo/bit-header-logo.png");
+      background-size: auto 30px;                  /* cao 30px, rộng theo tỉ lệ */
+      background-repeat: repeat;                   /* lặp lại */
+      background-attachment: fixed;                /* cố định khi cuộn */
+      background-color: #f5f5f5;
+
+      min-height: 300px;                           /* khung đủ lớn để thấy nền */
+      padding: 20px;
+      border: 1px solid #999;
+      font-weight: bold;
+    }
+
+    /* ===== e. Đoạn văn: rộng 100px, cao 50px, ẩn nội dung tràn, cắt bằng "...", không xuống dòng ===== */
+    #e {
+      width: 100px;                                /* i. Rộng 100px */
+      height: 50px;                                /* i. Cao 50px */
+      overflow: hidden;                            /* i. Ẩn nội dung khi bị tràn */
+      text-overflow: ellipsis;                     /* ii. Cắt nội dung bị tràn với chữ ... */
+      white-space: nowrap;                         /* iii. white-space: nowrap */
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- a -->
+  <p id="a">Đại học UEH</p>
+
+  <!-- b -->
+  <p id="b">Khoa CNTT</p>
+
+  <!-- c -->
+  <p id="c">BIT-UEH</p>
+
+  <!-- d -->
+  <div id="d">Logo BIT làm hình nền, kích cỡ 30px, lặp lại và cố định.</div>
+
+  <!-- e -->
+  <p id="e">Nhu cầu xã hội Ngành Thương mại điện tử (TMĐT) tại Việt Nam hiện nay đang có những bước tăng trưởng mạnh mẽ và ngày càng đóng góp nhiều hơn cho sự phát triển kinh tế xã hội của đất nước. Thị trường TMĐT Việt Nam đã trở nên sôi động hơn khi có nhiều</p>
+
+  <!-- Kéo dài trang để cuộn thử hiệu ứng nền cố định -->
+  <div style="height: 800px;"></div>
+
+</body>
+</html>
