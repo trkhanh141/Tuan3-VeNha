@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 09 - DOM and Events</title>
+    <title>Lab 09 - JavaScript DOM and Events</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
@@ -18,48 +18,71 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: auto;
             padding: 30px 16px;
         }
 
         .header {
-            background: linear-gradient(135deg, #245b91, #3498db);
-            color: white;
-            padding: 35px 25px;
+            padding: 38px 24px;
             text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #176b63, #27ae60);
             border-radius: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,.1);
         }
 
         .header .icon {
-            font-size: 42px;
+            font-size: 45px;
             margin-bottom: 12px;
         }
 
         .header h1 {
             margin: 0 0 10px;
-            font-size: 28px;
+            font-size: 30px;
         }
 
         .header p {
-            margin: 0;
-            font-size: 15px;
+            margin: 6px 0;
+            line-height: 1.5;
         }
 
         .back {
             display: inline-block;
             margin: 22px 0;
-            color: #2980b9;
-            text-decoration: none;
+            color: #16816f;
             font-weight: bold;
+            text-decoration: none;
         }
 
         .back:hover { text-decoration: underline; }
 
+        .summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .summary-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 16px;
+            background: white;
+            border-radius: 9px;
+            box-shadow: 0 2px 6px rgba(0,0,0,.06);
+        }
+
+        .summary-item strong {
+            display: block;
+            color: #16816f;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
         .section-title {
-            margin: 8px 0 16px;
-            font-size: 21px;
+            margin: 25px 0 15px;
+            font-size: 22px;
         }
 
         .exercise-list {
@@ -71,10 +94,10 @@
         .exercise-card {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 18px;
+            gap: 13px;
+            padding: 17px;
             background: white;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #27ae60;
             border-radius: 9px;
             text-decoration: none;
             color: #2c3e50;
@@ -84,42 +107,59 @@
 
         .exercise-card:hover {
             transform: translateY(-3px);
-            background: #eaf3fb;
+            background: #e9f7ef;
+            box-shadow: 0 5px 12px rgba(0,0,0,.1);
         }
 
-        .exercise-card .number {
-            min-width: 43px;
-            height: 43px;
+        .number {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #eaf3fb;
-            color: #2980b9;
             border-radius: 50%;
+            background: #e9f7ef;
+            color: #16816f;
             font-weight: bold;
         }
 
-        .exercise-card h3 {
-            margin: 0;
-            font-size: 16px;
+        .exercise-info { flex: 1; }
+
+        .exercise-info h3 {
+            margin: 0 0 6px;
+            font-size: 15px;
         }
 
-        .exercise-card p {
-            margin: 5px 0 0;
+        .exercise-info p {
+            margin: 0;
             color: #7f8c8d;
-            font-size: 13px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .arrow { color: #16816f; }
+
+        .note {
+            margin-top: 22px;
+            padding: 15px 18px;
+            background: #e9f7ef;
+            border-left: 4px solid #27ae60;
+            border-radius: 7px;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         footer {
-            text-align: center;
             margin-top: 30px;
+            text-align: center;
             color: #7f8c8d;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 620px) {
             .exercise-list { grid-template-columns: 1fr; }
-            .header h1 { font-size: 23px; }
+            .header h1 { font-size: 25px; }
         }
     </style>
 </head>
@@ -130,61 +170,117 @@
     <header class="header">
         <div class="icon"><i class="fas fa-code"></i></div>
         <h1>LAB 09</h1>
-        <p>JavaScript 2 - DOM and Events</p>
-        <p>Danh sách các bài thực hành thao tác DOM và xử lý sự kiện</p>
+        <p><strong>JavaScript 2 - DOM and Events</strong></p>
+        <p>Fundamentals of Web Development, 2nd Edition</p>
     </header>
 
     <a class="back" href="../index.html">
-        <i class="fas fa-arrow-left"></i> Quay về trang chủ
+        <i class="fas fa-arrow-left"></i> Quay về JavaScript Labs
     </a>
+
+    <div class="summary">
+        <div class="summary-item">
+            <strong>8</strong>
+            Exercise
+        </div>
+        <div class="summary-item">
+            <strong>7</strong>
+            File HTML thực hành
+        </div>
+        <div class="summary-item">
+            <strong>02</strong>
+            Chủ đề DOM and Events
+        </div>
+    </div>
 
     <h2 class="section-title">
         <i class="fas fa-folder-open"></i> Danh sách bài thực hành
     </h2>
 
     <div class="exercise-list">
-        <a href="Exercise9.1.html" class="exercise-card">
-            <span class="number">01</span>
-            <div><h3>Exercise 9.1</h3><p>DOM and Events Practice</p></div>
+
+        <a href="lab09-walkthrough01.html" class="exercise-card">
+            <span class="number">9.1</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.1</h3>
+                <p>Basic DOM Selection</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise9.2.html" class="exercise-card">
-            <span class="number">02</span>
-            <div><h3>Exercise 9.2</h3><p>DOM and Events Practice</p></div>
+        <a href="lab09-walkthrough02.html" class="exercise-card">
+            <span class="number">9.2</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.2</h3>
+                <p>DOM Family Relations</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise9.3.html" class="exercise-card">
-            <span class="number">03</span>
-            <div><h3>Exercise 9.3</h3><p>DOM and Events Practice</p></div>
+        <a href="lab09-walkthrough03.html" class="exercise-card">
+            <span class="number">9.3</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.3</h3>
+                <p>Modifying the DOM</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise9.4.html" class="exercise-card">
-            <span class="number">04</span>
-            <div><h3>Exercise 9.4</h3><p>DOM and Events Practice</p></div>
+        <a href="lab09-walkthrough04.html" class="exercise-card">
+            <span class="number">9.4</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.4</h3>
+                <p>Simple Event Handling</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise9.5.html" class="exercise-card">
-            <span class="number">05</span>
-            <div><h3>Exercise 9.5</h3><p>DOM and Events Practice</p></div>
+        <a href="lab09-walkthrough05.html" class="exercise-card">
+            <span class="number">9.5</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.5</h3>
+                <p>Responding to Load Events</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise9.6.html" class="exercise-card">
-            <span class="number">06</span>
-            <div><h3>Exercise 9.6</h3><p>DOM and Events Practice</p></div>
+        <a href="lab09-walkthrough05.html" class="exercise-card">
+            <span class="number">9.6</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.6</h3>
+                <p>Debugging Events</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise9.7.html" class="exercise-card">
-            <span class="number">07</span>
-            <div><h3>Exercise 9.7</h3><p>DOM and Events Practice</p></div>
+        <a href="lab09-walkthrough07.html" class="exercise-card">
+            <span class="number">9.7</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.7</h3>
+                <p>Working with Forms</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise9.8.html" class="exercise-card">
-            <span class="number">08</span>
-            <div><h3>Exercise 9.8</h3><p>DOM and Events Practice</p></div>
+        <a href="lab09-walkthrough08.html" class="exercise-card">
+            <span class="number">9.8</span>
+            <div class="exercise-info">
+                <h3>Exercise 9.8</h3>
+                <p>Form Validation</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
+
     </div>
 
-    <footer>JavaScript Labs - Lab 09</footer>
+    <div class="note">
+        <strong><i class="fas fa-info-circle"></i> Lưu ý:</strong>
+        Exercise 9.5 và 9.6 được liên kết đến cùng file
+        <strong>lab09-walkthrough05.html</strong> theo cấu trúc source.
+    </div>
+
+    <footer>&copy; 2026 - JavaScript Labs | Lab 09</footer>
+
 </div>
 </body>
 </html>
