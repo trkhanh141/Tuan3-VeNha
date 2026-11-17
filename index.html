@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang cá nhân - Danh sách bài tập</title>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
   <style>
@@ -26,7 +25,7 @@
       padding: 30px 16px;
     }
 
-    /* ===== THÔNG TIN CÁ NHÂN ===== */
+    /* THÔNG TIN CÁ NHÂN */
     .profile {
       background: #fff;
       border-radius: 14px;
@@ -78,65 +77,11 @@
       opacity: .8;
     }
 
-    /* ===== TIÊU ĐỀ CÁC KHU VỰC ===== */
+    /* DANH SÁCH BÀI TẬP */
     h2 {
       margin: 30px 0 14px;
-      font-size: 22px;
     }
 
-    /* ===== JAVASCRIPT LABS ===== */
-    .lab-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .lab-card {
-      display: block;
-      padding: 22px 16px;
-      background: #fff;
-      border-top: 5px solid #2980b9;
-      border-radius: 10px;
-      color: #2c3e50;
-      text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,.08);
-      transition: .2s;
-    }
-
-    .lab-card:hover {
-      background: #eaf3fb;
-      transform: translateY(-4px);
-      box-shadow: 0 5px 12px rgba(0,0,0,.12);
-    }
-
-    .lab-card .icon {
-      font-size: 30px;
-      color: #2980b9;
-      margin-bottom: 12px;
-    }
-
-    .lab-card h3 {
-      margin: 0 0 8px;
-      font-size: 19px;
-      color: #2471a3;
-    }
-
-    .lab-card p {
-      margin: 4px 0;
-      font-size: 13px;
-      color: #667788;
-      line-height: 1.5;
-    }
-
-    .lab-card .view {
-      display: inline-block;
-      margin-top: 15px;
-      color: #2980b9;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    /* ===== DANH SÁCH BÀI TẬP CŨ ===== */
     .bai-list {
       list-style: none;
       margin: 0;
@@ -160,13 +105,27 @@
 
     .bai-list a:hover {
       background: #eaf3fb;
+      transform: translateY(-2px);
     }
 
     .bai-list .fa-file-code {
       color: #2980b9;
     }
 
-    /* ===== FOOTER ===== */
+    /* Ô JAVASCRIPT LABS */
+    .bai-list .javascript-labs {
+      border-left-color: #e0a800;
+      background: #fffdf5;
+    }
+
+    .bai-list .javascript-labs .fa-js-square {
+      color: #d6a000;
+    }
+
+    .bai-list .javascript-labs:hover {
+      background: #fff5d6;
+    }
+
     footer {
       margin-top: 30px;
       text-align: center;
@@ -174,12 +133,7 @@
       color: #7f8c8d;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 600px) {
-      .lab-list {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 560px) {
       .bai-list {
         grid-template-columns: 1fr;
       }
@@ -190,13 +144,12 @@
 <body>
   <div class="container">
 
-    <!-- ===== THÔNG TIN CÁ NHÂN ===== -->
+    <!-- THÔNG TIN CÁ NHÂN -->
     <section class="profile">
-
       <img src="avatar.jpg" alt="Ảnh đại diện"
-        onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 200%27%3E%3Crect width=%27200%27 height=%27200%27 fill=%27%23dfe7ef%27/%3E%3Ccircle cx=%27100%27 cy=%2778%27 r=%2738%27 fill=%27%239fb3c8%27/%3E%3Cpath d=%27M28 200c0-42 32-70 72-70s72 28 72 70z%27 fill=%27%239fb3c8%27/%3E%3C/svg%3E';">
+           onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 200%27%3E%3Crect width=%27200%27 height=%27200%27 fill=%27%23dfe7ef%27/%3E%3Ccircle cx=%27100%27 cy=%2778%27 r=%2738%27 fill=%27%239fb3c8%27/%3E%3Cpath d=%27M28 200c0-42 32-70 72-70s72 28 72 70z%27 fill=%27%239fb3c8%27/%3E%3C/svg%3E';">
 
-      <h1> Đỗ Trọng Khanh </h1>
+      <h1>[Họ và tên của bạn]</h1>
 
       <p class="info">
         <i class="fas fa-id-badge fa-fw"></i>
@@ -235,68 +188,9 @@
           <i class="fas fa-envelope"></i>
         </a>
       </div>
-
     </section>
 
-    <!-- ===== JAVASCRIPT LABS ===== -->
-    <h2>
-      <i class="fas fa-laptop-code fa-fw"></i>
-      JavaScript Labs
-    </h2>
-
-    <div class="lab-list">
-
-      <!-- LAB 08 -->
-      <a href="JavaScript-Labs/Lab08/index.html" class="lab-card">
-        <div class="icon">
-          <i class="fab fa-js-square"></i>
-        </div>
-
-        <h3>Lab 08</h3>
-        <p>JavaScript 1</p>
-        <p>Language Foundations</p>
-
-        <span class="view">
-          Xem bài thực hành
-          <i class="fas fa-arrow-right"></i>
-        </span>
-      </a>
-
-      <!-- LAB 09 -->
-      <a href="JavaScript-Labs/Lab09/index.html" class="lab-card">
-        <div class="icon">
-          <i class="fas fa-code"></i>
-        </div>
-
-        <h3>Lab 09</h3>
-        <p>JavaScript 2</p>
-        <p>DOM and Events</p>
-
-        <span class="view">
-          Xem bài thực hành
-          <i class="fas fa-arrow-right"></i>
-        </span>
-      </a>
-
-      <!-- LAB 10 -->
-      <a href="JavaScript-Labs/Lab10/index.html" class="lab-card">
-        <div class="icon">
-          <i class="fas fa-puzzle-piece"></i>
-        </div>
-
-        <h3>Lab 10</h3>
-        <p>JavaScript 3</p>
-        <p>jQuery</p>
-
-        <span class="view">
-          Xem bài thực hành
-          <i class="fas fa-arrow-right"></i>
-        </span>
-      </a>
-
-    </div>
-
-    <!-- ===== DANH SÁCH BÀI TẬP CŨ ===== -->
+    <!-- DANH SÁCH BÀI TẬP CŨ -->
     <h2>
       <i class="fas fa-folder-open fa-fw"></i>
       Danh sách bài tập
@@ -353,11 +247,18 @@
         </a>
       </li>
 
+      <!-- LIÊN KẾT ĐẾN JAVASCRIPT LABS -->
+      <li>
+        <a href="JavaScript-Labs/index.html" class="javascript-labs">
+          <i class="fab fa-js-square fa-fw"></i>
+          <strong>JavaScript Labs (08 - 10)</strong>
+        </a>
+      </li>
+
     </ul>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
-      &copy; 2026 - Bài tập HTML/CSS & JavaScript
+      &copy; 2026 - Bài tập HTML/CSS
     </footer>
 
   </div>
