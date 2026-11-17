@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 10 - jQuery</title>
+    <title>Lab 10 - JavaScript jQuery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
@@ -18,48 +18,71 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: auto;
             padding: 30px 16px;
         }
 
         .header {
-            background: linear-gradient(135deg, #245b91, #3498db);
-            color: white;
-            padding: 35px 25px;
+            padding: 38px 24px;
             text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #7040a0, #9b59b6);
             border-radius: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,.1);
         }
 
         .header .icon {
-            font-size: 42px;
+            font-size: 45px;
             margin-bottom: 12px;
         }
 
         .header h1 {
             margin: 0 0 10px;
-            font-size: 28px;
+            font-size: 30px;
         }
 
         .header p {
-            margin: 0;
-            font-size: 15px;
+            margin: 6px 0;
+            line-height: 1.5;
         }
 
         .back {
             display: inline-block;
             margin: 22px 0;
-            color: #2980b9;
-            text-decoration: none;
+            color: #8050a8;
             font-weight: bold;
+            text-decoration: none;
         }
 
         .back:hover { text-decoration: underline; }
 
+        .summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .summary-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 16px;
+            background: white;
+            border-radius: 9px;
+            box-shadow: 0 2px 6px rgba(0,0,0,.06);
+        }
+
+        .summary-item strong {
+            display: block;
+            color: #8050a8;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
         .section-title {
-            margin: 8px 0 16px;
-            font-size: 21px;
+            margin: 25px 0 15px;
+            font-size: 22px;
         }
 
         .exercise-list {
@@ -71,10 +94,10 @@
         .exercise-card {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 18px;
+            gap: 13px;
+            padding: 17px;
             background: white;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #9b59b6;
             border-radius: 9px;
             text-decoration: none;
             color: #2c3e50;
@@ -84,42 +107,59 @@
 
         .exercise-card:hover {
             transform: translateY(-3px);
-            background: #eaf3fb;
+            background: #f5eef8;
+            box-shadow: 0 5px 12px rgba(0,0,0,.1);
         }
 
-        .exercise-card .number {
-            min-width: 43px;
-            height: 43px;
+        .number {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #eaf3fb;
-            color: #2980b9;
             border-radius: 50%;
+            background: #f5eef8;
+            color: #8050a8;
             font-weight: bold;
         }
 
-        .exercise-card h3 {
-            margin: 0;
-            font-size: 16px;
+        .exercise-info { flex: 1; }
+
+        .exercise-info h3 {
+            margin: 0 0 6px;
+            font-size: 15px;
         }
 
-        .exercise-card p {
-            margin: 5px 0 0;
+        .exercise-info p {
+            margin: 0;
             color: #7f8c8d;
-            font-size: 13px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .arrow { color: #8050a8; }
+
+        .note {
+            margin-top: 22px;
+            padding: 15px 18px;
+            background: #f5eef8;
+            border-left: 4px solid #9b59b6;
+            border-radius: 7px;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         footer {
-            text-align: center;
             margin-top: 30px;
+            text-align: center;
             color: #7f8c8d;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 620px) {
             .exercise-list { grid-template-columns: 1fr; }
-            .header h1 { font-size: 23px; }
+            .header h1 { font-size: 25px; }
         }
     </style>
 </head>
@@ -130,71 +170,135 @@
     <header class="header">
         <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
         <h1>LAB 10</h1>
-        <p>JavaScript 3 - jQuery</p>
-        <p>Danh sách các bài thực hành sử dụng thư viện jQuery</p>
+        <p><strong>JavaScript 3 - jQuery</strong></p>
+        <p>Fundamentals of Web Development, 2nd Edition</p>
     </header>
 
     <a class="back" href="../index.html">
-        <i class="fas fa-arrow-left"></i> Quay về trang chủ
+        <i class="fas fa-arrow-left"></i> Quay về JavaScript Labs
     </a>
+
+    <div class="summary">
+        <div class="summary-item">
+            <strong>10</strong>
+            Exercise
+        </div>
+        <div class="summary-item">
+            <strong>9</strong>
+            File HTML thực hành
+        </div>
+        <div class="summary-item">
+            <strong>03</strong>
+            Chủ đề jQuery
+        </div>
+    </div>
 
     <h2 class="section-title">
         <i class="fas fa-folder-open"></i> Danh sách bài thực hành
     </h2>
 
     <div class="exercise-list">
-        <a href="Exercise10.1.html" class="exercise-card">
-            <span class="number">01</span>
-            <div><h3>Exercise 10.1</h3><p>jQuery Practice</p></div>
+
+        <a href="lab10-walkthrough01.html" class="exercise-card">
+            <span class="number">10.1</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.1</h3>
+                <p>Set Up jQuery</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.2.html" class="exercise-card">
-            <span class="number">02</span>
-            <div><h3>Exercise 10.2</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough01.html" class="exercise-card">
+            <span class="number">10.2</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.2</h3>
+                <p>Basic Selectors</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.3.html" class="exercise-card">
-            <span class="number">03</span>
-            <div><h3>Exercise 10.3</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough03.html" class="exercise-card">
+            <span class="number">10.3</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.3</h3>
+                <p>Advanced Selectors</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.4.html" class="exercise-card">
-            <span class="number">04</span>
-            <div><h3>Exercise 10.4</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough04.html" class="exercise-card">
+            <span class="number">10.4</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.4</h3>
+                <p>jQuery Listeners</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.5.html" class="exercise-card">
-            <span class="number">05</span>
-            <div><h3>Exercise 10.5</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough05.html" class="exercise-card">
+            <span class="number">10.5</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.5</h3>
+                <p>Inserting DOM Elements</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.6.html" class="exercise-card">
-            <span class="number">06</span>
-            <div><h3>Exercise 10.6</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough06.html" class="exercise-card">
+            <span class="number">10.6</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.6</h3>
+                <p>Simple jQuery Animation</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.7.html" class="exercise-card">
-            <span class="number">07</span>
-            <div><h3>Exercise 10.7</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough07.html" class="exercise-card">
+            <span class="number">10.7</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.7</h3>
+                <p>More jQuery Animation</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.8.html" class="exercise-card">
-            <span class="number">08</span>
-            <div><h3>Exercise 10.8</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough08.html" class="exercise-card">
+            <span class="number">10.8</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.8</h3>
+                <p>Complex Animations</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.9.html" class="exercise-card">
-            <span class="number">09</span>
-            <div><h3>Exercise 10.9</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough09.html" class="exercise-card">
+            <span class="number">10.9</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.9</h3>
+                <p>GET Requests</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
 
-        <a href="Exercise10.10.html" class="exercise-card">
-            <span class="number">10</span>
-            <div><h3>Exercise 10.10</h3><p>jQuery Practice</p></div>
+        <a href="lab10-walkthrough10.html" class="exercise-card">
+            <span class="number">10.10</span>
+            <div class="exercise-info">
+                <h3>Exercise 10.10</h3>
+                <p>jqXHR Handling</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
         </a>
+
     </div>
 
-    <footer>JavaScript Labs - Lab 10</footer>
+    <div class="note">
+        <strong><i class="fas fa-info-circle"></i> Lưu ý:</strong>
+        Exercise 10.1 và 10.2 được liên kết đến cùng file
+        <strong>lab10-walkthrough01.html</strong> theo cấu trúc source.
+    </div>
+
+    <footer>&copy; 2026 - JavaScript Labs | Lab 10</footer>
+
 </div>
 </body>
 </html>
