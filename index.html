@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -5,15 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang cá nhân - Danh sách bài tập</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #eef2f7;
       color: #2c3e50;
     }
-    .container { max-width: 800px; margin: 0 auto; padding: 30px 16px; }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 16px;
+    }
 
     /* ===== Thông tin cá nhân ===== */
     .profile {
@@ -23,32 +31,112 @@
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,.1);
     }
+
     .profile img {
-      width: 150px; height: 150px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #2980b9;
     }
-    .profile h1 { margin: 14px 0 4px; font-size: 26px; }
-    .profile .info { margin: 4px 0; color: #566573; }
+
+    .profile h1 {
+      margin: 14px 0 4px;
+      font-size: 26px;
+    }
+
+    .profile .info {
+      margin: 4px 0;
+      color: #566573;
+    }
+
     .social { margin-top: 16px; }
+
     .social a {
       display: inline-block;
-      width: 42px; height: 42px; line-height: 42px;
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
       margin: 0 4px;
       border-radius: 50%;
       color: #fff;
       font-size: 20px;
       text-decoration: none;
     }
+
     .social .fb { background: #1877f2; }
     .social .gh { background: #24292e; }
     .social .in { background: #0a66c2; }
     .social .ml { background: #c0392b; }
     .social a:hover { opacity: .8; }
 
-    /* ===== Danh sách bài tập ===== */
-    h2 { margin: 30px 0 14px; }
+    /* ===== Khu vực JavaScript Labs ===== */
+    .lab-section {
+      margin-top: 30px;
+    }
+
+    .lab-section h2,
+    .exercise-section h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+
+    .lab-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .lab-card {
+      display: block;
+      background: #fff;
+      padding: 22px 16px;
+      border-radius: 10px;
+      border-top: 5px solid #2980b9;
+      text-decoration: none;
+      color: #2c3e50;
+      box-shadow: 0 2px 6px rgba(0,0,0,.08);
+      transition: .2s;
+    }
+
+    .lab-card:hover {
+      transform: translateY(-4px);
+      background: #eaf3fb;
+      box-shadow: 0 5px 12px rgba(0,0,0,.12);
+    }
+
+    .lab-card .icon {
+      font-size: 28px;
+      color: #2980b9;
+      margin-bottom: 12px;
+    }
+
+    .lab-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #2471a3;
+    }
+
+    .lab-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #667788;
+      line-height: 1.5;
+    }
+
+    .lab-card .view {
+      display: inline-block;
+      margin-top: 15px;
+      color: #2980b9;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* ===== Danh sách bài tập cũ ===== */
+    .exercise-section {
+      margin-top: 32px;
+    }
+
     .bai-list {
       list-style: none;
       margin: 0;
@@ -57,6 +145,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
+
     .bai-list a {
       display: block;
       padding: 16px 20px;
@@ -67,29 +156,44 @@
       text-decoration: none;
       box-shadow: 0 2px 6px rgba(0,0,0,.08);
     }
+
     .bai-list a:hover { background: #eaf3fb; }
     .bai-list .fa-file-code { color: #2980b9; }
 
-    footer { margin-top: 30px; text-align: center; font-size: 14px; color: #7f8c8d; }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #7f8c8d;
+    }
 
-    @media (max-width: 560px) {
-      .bai-list { grid-template-columns: 1fr; }
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .lab-list {
+        grid-template-columns: 1fr;
+      }
+
+      .bai-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
 
-    <!-- THÔNG TIN CÁ NHÂN: thay [Họ và tên của bạn] bằng họ tên đầy đủ -->
+    <!-- THÔNG TIN CÁ NHÂN -->
     <section class="profile">
-      <!-- Đặt ảnh của bạn tên avatar.jpg cùng thư mục với index.html. Chưa có ảnh thì hiện ảnh tạm. -->
       <img src="avatar.jpg" alt="Ảnh đại diện"
            onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 200%27%3E%3Crect width=%27200%27 height=%27200%27 fill=%27%23dfe7ef%27/%3E%3Ccircle cx=%27100%27 cy=%2778%27 r=%2738%27 fill=%27%239fb3c8%27/%3E%3Cpath d=%27M28 200c0-42 32-70 72-70s72 28 72 70z%27 fill=%27%239fb3c8%27/%3E%3C/svg%3E';">
+
       <h1>[Họ và tên của bạn]</h1>
       <p class="info"><i class="fas fa-id-badge fa-fw"></i> MSSV: 31241025367</p>
       <p class="info"><i class="fas fa-graduation-cap fa-fw"></i> Ngành Thương mại điện tử - Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH)</p>
       <p class="info"><i class="fas fa-users fa-fw"></i> Lớp EE0002 - Khóa 50</p>
       <p class="info"><i class="fas fa-envelope fa-fw"></i> khanhdo.31241025367@st.ueh.edu.vn</p>
+
       <div class="social">
         <a class="fb" href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a class="gh" href="https://github.com/trkhanh141" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
@@ -98,19 +202,56 @@
       </div>
     </section>
 
-    <!-- DANH SÁCH BÀI TẬP -->
-    <h2><i class="fas fa-folder-open fa-fw"></i> Danh sách bài tập</h2>
-    <ul class="bai-list">
-      <li><a href="BaiTap2.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 2</strong></a></li>
-      <li><a href="BaiTap4.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 4</strong></a></li>
-      <li><a href="BaiTap5.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 5</strong></a></li>
-      <li><a href="BaiTap6.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 6</strong></a></li>
-      <li><a href="BaiTap7.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 7</strong></a></li>
-      <li><a href="BaiTap8/BaiTap8.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 8</strong></a></li>
-      <li><a href="BaiTap9.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 9</strong></a></li>
-    </ul>
+    <!-- JAVASCRIPT LABS -->
+    <section class="lab-section">
+      <h2><i class="fas fa-laptop-code fa-fw"></i> JavaScript Labs</h2>
 
-    <footer>&copy; 2026 - Bài tập HTML/CSS</footer>
+      <div class="lab-list">
+
+        <a href="Lab08/index.html" class="lab-card">
+          <div class="icon"><i class="fab fa-js-square"></i></div>
+          <h3>Lab 08</h3>
+          <p>JavaScript 1</p>
+          <p>Language Foundations</p>
+          <span class="view">Xem bài thực hành <i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="Lab09/index.html" class="lab-card">
+          <div class="icon"><i class="fas fa-code"></i></div>
+          <h3>Lab 09</h3>
+          <p>JavaScript 2</p>
+          <p>DOM and Events</p>
+          <span class="view">Xem bài thực hành <i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="Lab10/index.html" class="lab-card">
+          <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
+          <h3>Lab 10</h3>
+          <p>JavaScript 3</p>
+          <p>jQuery</p>
+          <span class="view">Xem bài thực hành <i class="fas fa-arrow-right"></i></span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- DANH SÁCH BÀI TẬP CŨ -->
+    <section class="exercise-section">
+      <h2><i class="fas fa-folder-open fa-fw"></i> Danh sách bài tập</h2>
+
+      <ul class="bai-list">
+        <li><a href="BaiTap2.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 2</strong></a></li>
+        <li><a href="BaiTap4.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 4</strong></a></li>
+        <li><a href="BaiTap5.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 5</strong></a></li>
+        <li><a href="BaiTap6.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 6</strong></a></li>
+        <li><a href="BaiTap7.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 7</strong></a></li>
+        <li><a href="BaiTap8/BaiTap8.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 8</strong></a></li>
+        <li><a href="BaiTap9.html"><i class="fas fa-file-code fa-fw"></i> <strong>Bài tập 9</strong></a></li>
+      </ul>
+    </section>
+
+    <footer>&copy; 2026 - Bài tập HTML/CSS & JavaScript</footer>
+
   </div>
 </body>
 </html>
