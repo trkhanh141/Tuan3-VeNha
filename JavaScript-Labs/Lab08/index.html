@@ -5,14 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 08 - JavaScript Language Foundations</title>
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -22,23 +18,22 @@
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 950px;
+            margin: auto;
             padding: 30px 16px;
         }
 
-        /* HEADER */
         .header {
-            background: linear-gradient(135deg, #245b91, #3498db);
-            color: white;
-            padding: 38px 25px;
+            padding: 38px 24px;
             text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #245b91, #3498db);
             border-radius: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,.1);
         }
 
         .header .icon {
-            font-size: 44px;
+            font-size: 45px;
             margin-bottom: 12px;
         }
 
@@ -49,26 +44,45 @@
 
         .header p {
             margin: 6px 0;
-            font-size: 15px;
+            line-height: 1.5;
         }
 
-        /* BACK TO HOME */
         .back {
             display: inline-block;
             margin: 22px 0;
             color: #2980b9;
-            text-decoration: none;
             font-weight: bold;
+            text-decoration: none;
         }
 
-        .back:hover {
-            text-decoration: underline;
+        .back:hover { text-decoration: underline; }
+
+        .summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
         }
 
-        /* SECTION */
+        .summary-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 16px;
+            background: white;
+            border-radius: 9px;
+            box-shadow: 0 2px 6px rgba(0,0,0,.06);
+        }
+
+        .summary-item strong {
+            display: block;
+            color: #2471a3;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
         .section-title {
-            margin: 8px 0 16px;
-            font-size: 21px;
+            margin: 25px 0 15px;
+            font-size: 22px;
         }
 
         .exercise-list {
@@ -80,9 +94,9 @@
         .exercise-card {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 18px;
-            background: #fff;
+            gap: 13px;
+            padding: 17px;
+            background: white;
             border-left: 5px solid #3498db;
             border-radius: 9px;
             text-decoration: none;
@@ -97,50 +111,55 @@
             box-shadow: 0 5px 12px rgba(0,0,0,.1);
         }
 
-        .exercise-card .number {
-            min-width: 43px;
-            height: 43px;
+        .number {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #eaf3fb;
-            color: #2980b9;
             border-radius: 50%;
+            background: #eaf3fb;
+            color: #2471a3;
             font-weight: bold;
         }
 
-        .exercise-card h3 {
+        .exercise-info { flex: 1; }
+
+        .exercise-info h3 {
+            margin: 0 0 6px;
+            font-size: 15px;
+        }
+
+        .exercise-info p {
             margin: 0;
-            font-size: 16px;
-        }
-
-        .exercise-card p {
-            margin: 5px 0 0;
             color: #7f8c8d;
-            font-size: 13px;
+            font-size: 12px;
+            line-height: 1.4;
         }
 
-        .exercise-card .arrow {
-            margin-left: auto;
-            color: #2980b9;
+        .arrow { color: #2980b9; }
+
+        .note {
+            margin-top: 22px;
+            padding: 15px 18px;
+            background: #eaf3fb;
+            border-left: 4px solid #3498db;
+            border-radius: 7px;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        /* FOOTER */
         footer {
-            text-align: center;
             margin-top: 30px;
+            text-align: center;
             color: #7f8c8d;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-            .exercise-list {
-                grid-template-columns: 1fr;
-            }
-
-            .header h1 {
-                font-size: 24px;
-            }
+        @media (max-width: 620px) {
+            .exercise-list { grid-template-columns: 1fr; }
+            .header h1 { font-size: 25px; }
         }
     </style>
 </head>
@@ -148,118 +167,146 @@
 <body>
 <div class="container">
 
-    <!-- HEADER -->
     <header class="header">
-        <div class="icon">
-            <i class="fab fa-js-square"></i>
-        </div>
-
+        <div class="icon"><i class="fab fa-js-square"></i></div>
         <h1>LAB 08</h1>
         <p><strong>JavaScript 1 - Language Foundations</strong></p>
         <p>Fundamentals of Web Development, 2nd Edition</p>
     </header>
 
-    <!-- BACK -->
     <a class="back" href="../index.html">
-        <i class="fas fa-arrow-left"></i>
-        Quay về trang JavaScript Labs
+        <i class="fas fa-arrow-left"></i> Quay về JavaScript Labs
     </a>
 
-    <!-- EXERCISES -->
+    <div class="summary">
+        <div class="summary-item">
+            <strong>11</strong>
+            Exercise
+        </div>
+        <div class="summary-item">
+            <strong>8</strong>
+            File HTML thực hành
+        </div>
+        <div class="summary-item">
+            <strong>01</strong>
+            Chủ đề JavaScript Foundations
+        </div>
+    </div>
+
     <h2 class="section-title">
-        <i class="fas fa-folder-open"></i>
-        Danh sách bài thực hành
+        <i class="fas fa-folder-open"></i> Danh sách bài thực hành
     </h2>
 
     <div class="exercise-list">
 
         <a href="exercise.html" class="exercise-card">
-            <span class="number">01</span>
-            <div>
-                <h3>Exercise</h3>
-                <p>JavaScript Exercise</p>
+            <span class="number">8.1</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.1</h3>
+                <p>Posts - Nội dung bài tập thực hành</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
         <a href="lab08-walkthrough02.html" class="exercise-card">
-            <span class="number">02</span>
-            <div>
-                <h3>Walkthrough 02</h3>
-                <p>JavaScript Practice</p>
+            <span class="number">8.2</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.2</h3>
+                <p>Embedded JavaScript</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
+        </a>
+
+        <a href="lab08-walkthrough02.html" class="exercise-card">
+            <span class="number">8.3</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.3</h3>
+                <p>External JavaScript</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
+        </a>
+
+        <a href="lab08-walkthrough02.html" class="exercise-card">
+            <span class="number">8.4</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.4</h3>
+                <p>Using NoScript</p>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
+        </a>
+
+        <a href="lab08-walkthrough02.html" class="exercise-card">
+            <span class="number">8.5</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.5</h3>
+                <p>Using the Browser Console</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
         <a href="lab08-walkthrough06.html" class="exercise-card">
-            <span class="number">06</span>
-            <div>
-                <h3>Walkthrough 06</h3>
-                <p>JavaScript Practice</p>
+            <span class="number">8.6</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.6</h3>
+                <p>Using Built-in JavaScript Objects</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
         <a href="lab08-walkthrough07.html" class="exercise-card">
-            <span class="number">07</span>
-            <div>
-                <h3>Walkthrough 07</h3>
-                <p>JavaScript Practice</p>
+            <span class="number">8.7</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.7</h3>
+                <p>Arrays</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
         <a href="lab08-walkthrough08.html" class="exercise-card">
-            <span class="number">08</span>
-            <div>
-                <h3>Walkthrough 08</h3>
-                <p>JavaScript Practice</p>
+            <span class="number">8.8</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.8</h3>
+                <p>JavaScript Functions</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
         <a href="lab08-walkthrough09.html" class="exercise-card">
-            <span class="number">09</span>
-            <div>
-                <h3>Walkthrough 09</h3>
-                <p>JavaScript Practice</p>
+            <span class="number">8.9</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.9</h3>
+                <p>Functions as Objects</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
         <a href="lab08-walkthrough10.html" class="exercise-card">
-            <span class="number">10</span>
-            <div>
-                <h3>Walkthrough 10</h3>
-                <p>JavaScript Practice</p>
+            <span class="number">8.10</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.10</h3>
+                <p>Creating JavaScript Objects</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
         <a href="lab08-walkthrough11.html" class="exercise-card">
-            <span class="number">11</span>
-            <div>
-                <h3>Walkthrough 11</h3>
-                <p>JavaScript Practice</p>
-            </div>
-            <i class="fas fa-chevron-right arrow"></i>
-        </a>
-
-        <a href="test-javascript.html" class="exercise-card">
-            <span class="number"><i class="fas fa-vial"></i></span>
-            <div>
-                <h3>JavaScript Test</h3>
-                <p>Kiểm tra JavaScript</p>
+            <span class="number">8.11</span>
+            <div class="exercise-info">
+                <h3>Exercise 8.11</h3>
+                <p>Arrays of Objects</p>
             </div>
             <i class="fas fa-chevron-right arrow"></i>
         </a>
 
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        &copy; 2026 - JavaScript Labs | Lab 08
-    </footer>
+    <div class="note">
+        <strong><i class="fas fa-info-circle"></i> Lưu ý:</strong>
+        Một số Exercise được triển khai chung trong một file Walkthrough.
+        Các liên kết tương ứng sẽ mở cùng file thực hành.
+    </div>
+
+    <footer>&copy; 2026 - JavaScript Labs | Lab 08</footer>
 
 </div>
 </body>
