@@ -38,8 +38,8 @@ JavaScript-Labs/
 
 ## 5. Truy cập website
 
-- **GitHub Repository:** 
-- **GitHub Pages:** 
+- **GitHub Repository:** https://github.com/trkhanh141/Tuan3-VeNha
+- **GitHub Pages:** https://trkhanh141.github.io/Tuan3-VeNha/
 
 ## 6. Kết luận
 
