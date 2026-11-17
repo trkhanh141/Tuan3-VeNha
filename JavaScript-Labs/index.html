@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Labs | Trang cá nhân</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #263b80, #4776c7);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro, .labs {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            color: #263b80;
+            margin-bottom: 15px;
+        }
+
+        .lab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+
+        .lab-card {
+            border: 1px solid #e1e6f0;
+            border-radius: 12px;
+            padding: 22px;
+            transition: 0.2s;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .lab-card h3 {
+            color: #3459a5;
+            margin-bottom: 10px;
+        }
+
+        .lab-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 9px 16px;
+            background: #3459a5;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .lab-card a:hover {
+            background: #263b80;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #667085;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JAVASCRIPT LABS</h1>
+        <p>My Learning Journey | JavaScript Practice</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Giới thiệu</h2>
+            <p>
+                Xin chào! Đây là trang web tổng hợp các bài thực hành
+                JavaScript trong quá trình học tập của tôi.
+                Website bao gồm ba phần nội dung: JavaScript Language
+                Foundations, DOM and Events và jQuery.
+            </p>
+
+            <p><strong>Họ và tên:</strong> [Nhập họ tên]</p>
+            <p><strong>MSSV:</strong> [Nhập mã số sinh viên]</p>
+            <p><strong>Môn học:</strong> JavaScript</p>
+        </section>
+
+        <section class="labs">
+            <h2>Các bài thực hành</h2>
+
+            <div class="lab-list">
+                <div class="lab-card">
+                    <h3>Lab 08</h3>
+                    <p>JavaScript 1 - Language Foundations</p>
+                    <a href="./Lab08/">Xem bài thực hành</a>
+                </div>
+
+                <div class="lab-card">
+                    <h3>Lab 09</h3>
+                    <p>JavaScript 2 - DOM and Events</p>
+                    <a href="./Lab09/">Xem bài thực hành</a>
+                </div>
+
+                <div class="lab-card">
+                    <h3>Lab 10</h3>
+                    <p>JavaScript 3 - jQuery</p>
+                    <a href="./Lab10/">Xem bài thực hành</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>JavaScript Labs | Student Practice Project</p>
+    </footer>
+
+</body>
+</html>
