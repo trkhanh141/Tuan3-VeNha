@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 10 - jQuery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef2f7;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px 16px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #245b91, #3498db);
+            color: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        }
+
+        .header .icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .header h1 {
+            margin: 0 0 10px;
+            font-size: 28px;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .back {
+            display: inline-block;
+            margin: 22px 0;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover { text-decoration: underline; }
+
+        .section-title {
+            margin: 8px 0 16px;
+            font-size: 21px;
+        }
+
+        .exercise-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+        }
+
+        .exercise-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px;
+            background: white;
+            border-left: 5px solid #3498db;
+            border-radius: 9px;
+            text-decoration: none;
+            color: #2c3e50;
+            box-shadow: 0 2px 7px rgba(0,0,0,.07);
+            transition: .2s;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-3px);
+            background: #eaf3fb;
+        }
+
+        .exercise-card .number {
+            min-width: 43px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eaf3fb;
+            color: #2980b9;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .exercise-card h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .exercise-card p {
+            margin: 5px 0 0;
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .exercise-list { grid-template-columns: 1fr; }
+            .header h1 { font-size: 23px; }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <header class="header">
+        <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
+        <h1>LAB 10</h1>
+        <p>JavaScript 3 - jQuery</p>
+        <p>Danh sách các bài thực hành sử dụng thư viện jQuery</p>
+    </header>
+
+    <a class="back" href="../index.html">
+        <i class="fas fa-arrow-left"></i> Quay về trang chủ
+    </a>
+
+    <h2 class="section-title">
+        <i class="fas fa-folder-open"></i> Danh sách bài thực hành
+    </h2>
+
+    <div class="exercise-list">
+        <a href="Exercise10.1.html" class="exercise-card">
+            <span class="number">01</span>
+            <div><h3>Exercise 10.1</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.2.html" class="exercise-card">
+            <span class="number">02</span>
+            <div><h3>Exercise 10.2</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.3.html" class="exercise-card">
+            <span class="number">03</span>
+            <div><h3>Exercise 10.3</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.4.html" class="exercise-card">
+            <span class="number">04</span>
+            <div><h3>Exercise 10.4</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.5.html" class="exercise-card">
+            <span class="number">05</span>
+            <div><h3>Exercise 10.5</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.6.html" class="exercise-card">
+            <span class="number">06</span>
+            <div><h3>Exercise 10.6</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.7.html" class="exercise-card">
+            <span class="number">07</span>
+            <div><h3>Exercise 10.7</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.8.html" class="exercise-card">
+            <span class="number">08</span>
+            <div><h3>Exercise 10.8</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.9.html" class="exercise-card">
+            <span class="number">09</span>
+            <div><h3>Exercise 10.9</h3><p>jQuery Practice</p></div>
+        </a>
+
+        <a href="Exercise10.10.html" class="exercise-card">
+            <span class="number">10</span>
+            <div><h3>Exercise 10.10</h3><p>jQuery Practice</p></div>
+        </a>
+    </div>
+
+    <footer>JavaScript Labs - Lab 10</footer>
+</div>
+</body>
+</html>
